@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.djm.basic.utils.ConfigReader;
 
 public class TextBoxTestTest extends BaseTest {
-    private TextBoxPage textBoxPage;
+    TextBoxPage textBoxPage = new TextBoxPage(driver);
 
     @Test
     public void submitEntry() {

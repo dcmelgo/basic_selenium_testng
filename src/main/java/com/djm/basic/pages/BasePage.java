@@ -4,6 +4,9 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
+import java.time.Duration;
+
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -52,5 +55,14 @@ public abstract class BasePage {
             return false;
         }
     }
+
+    public void waitForElementToBeVisible(SelenideElement element) {
+        try {
+            element.shouldBe(visible, Duration.ofSeconds(10));
+        } catch (Exception e) {
+            System.out.println("Error waiting for element to be visible: " + e.getMessage());
+        }
+    }
+    
      
 }
