@@ -1,6 +1,7 @@
 package com.djm.basic.tests;
 
 import com.djm.basic.pages.TextBoxPage;
+
 import org.testng.annotations.Test;
 import com.djm.basic.utils.ConfigReader;
 
@@ -10,6 +11,7 @@ public class TextBoxTestTest extends BaseTest {
     @Test
     public void submitEntry() {
         try {
+
             String name = ConfigReader.getDataValue("name");
             String email = ConfigReader.getDataValue("email");
             String caddress = ConfigReader.getDataValue("current");
@@ -19,6 +21,7 @@ public class TextBoxTestTest extends BaseTest {
             textBoxPage.enter_email(email);
             textBoxPage.enter_cAddress(caddress);
             textBoxPage.enter_pAddress(paddress);
+
         } catch (Exception e) {
             System.out.println(e);
         }
