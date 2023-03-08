@@ -1,6 +1,0 @@
-com\djm\basic\utils\DriverFactory.class
-com\djm\basic\tests\BaseTest.class
-com\djm\basic\utils\ConfigReader.class
-com\djm\basic\pages\BasePage.class
-com\djm\basic\pages\HomePage.class
-com\djm\basic\pages\TextBoxPage.class
