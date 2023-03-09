@@ -61,6 +61,15 @@ public class TestListener implements ITestListener {
             }
         }
     }
+   
+    @Override
+    public synchronized void onTestSkipped(ITestResult result) {
+        test.get().log(Status.SKIP, "Test skipped");
+    }
+
+    @Override
+    public synchronized void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+    }
     private synchronized String getMarkupForTestFailure(ITestResult result) {
         Throwable throwable = result.getThrowable();
         StringBuilder errorDetails = new StringBuilder();
@@ -86,13 +95,5 @@ public class TestListener implements ITestListener {
             e.printStackTrace();
             return null;
         }
-    }
-    @Override
-    public synchronized void onTestSkipped(ITestResult result) {
-        test.get().log(Status.SKIP, "Test skipped");
-    }
-
-    @Override
-    public synchronized void onTestFailedButWithinSuccessPercentage(ITestResult result) {
     }
 }
